@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { FC } from "react";
 
-const Cursor: FC = () => {
-  const [isHovered, setHovered] = useState(false);
+type CursorProps = {
+  isZoom: boolean;
+};
+
+const Cursor: FC<CursorProps> = ({ isZoom }) => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -24,10 +27,11 @@ const Cursor: FC = () => {
 
   return (
     <motion.div
-      className="bg-white fixed top-0 left-0 mix-blend-difference z-10"
+      key={"cursor"}
+      initial={false}
+      className="bg-white fixed top-0 left-0 mix-blend-difference z-10  rounded-xl h-4 w-4"
       animate={{
-        height: 100,
-        width: 100,
+        scale: isZoom ? 5 : 1,
       }}
       style={{
         translateX: cursorXSpring,
@@ -37,4 +41,4 @@ const Cursor: FC = () => {
   );
 };
 
-export default Cursor;
+export default memo(Cursor);

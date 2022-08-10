@@ -5,3 +5,43 @@
 * {
   cursor: none;
 }
+
+@font-face {
+  font-family: "Metropolis-Bold";
+  src: url("../assets/Metropolis/Metropolis-Bold.woff2");
+}
+@font-face {
+  font-family: "Metropolis-SemiBold";
+  src: url("../assets/Metropolis/Metropolis-SemiBold.woff2");
+}
+@font-face {
+  font-family: "Metropolis-Medium";
+  src: url("../assets/Metropolis/Metropolis-Medium.woff2");
+}
+@font-face {
+  font-family: "Metropolis-Regular";
+  src: url("../assets/Metropolis/Metropolis-Regular.woff2");
+}
+@font-face {
+  font-family: "Metropolis-Light";
+  src: url("../assets/Metropolis/Metropolis-Light.woff2");
+}
+
+@layer base {
+  h1 {
+    @apply font-bold;
+    @apply text-base sm:text-xl md:text-2xl;
+  }
+  a {
+    @apply font-medium;
+    @apply text-xs md:text-sm lg:text-base;
+  }
+  p {
+    @apply font-regular;
+    @apply text-xs md:text-sm lg:text-base;
+  }
+  b {
+    @apply font-medium;
+    @apply text-xs md:text-sm lg:text-base;
+  }
+}
