@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from "react";
+import { useEffect, memo } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { FC } from "react";
 

@@ -1,14 +1,16 @@
 import { CursorContext, CursorInitialValue } from "provider";
 import React, { useContext } from "react";
+
 const Footer = () => {
   const { setIsZoom } = useContext(CursorContext) as CursorInitialValue;
   return (
-    <footer className={`flex w-full h-normal bg-gray3 items-center px-normal`}>
+    <footer
+      className={`flex w-full h-normal bg-white items-center px-normal`}
+      onMouseEnter={() => setIsZoom(true)}
+    >
       <p>
         Wanna contact me ? -{" "}
         <a
-          onMouseEnter={() => setIsZoom(true)}
-          onMouseLeave={() => setIsZoom(false)}
           rel="noreferrer"
           target={"_blank"}
           href="https://www.linkedin.com/in/batmagnai-munkhnasan-027375193/"

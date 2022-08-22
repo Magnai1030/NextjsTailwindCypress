@@ -45,12 +45,11 @@ const SEO: React.FC<SEOProps> = ({
     ) : (
       <meta
         property="og:image"
-        content={`${process.env.NEXT_PUBLIC_HT_URL}/uploads/images/2021/4/8/hitech.jpg`}
+        content={`https://media-exp1.licdn.com/dms/image/C4E03AQHAS5YfVUOb0Q/profile-displayphoto-shrink_800_800/0/1615534563638?e=1666828800&v=beta&t=xwuMPMkTwsx_uI9EFyMUU0d8718Nvm8fnSXKOf7vRq0`}
       />
     )}
     {image && <meta name="twitter:image" content={`${image}`} />}
     {canonical && <link rel="canonical" href={`${canonical}`} />}
-    {/* {js && <script type="text/javascript" src={`${js}`}></script>} */}
   </Head>
 );
 

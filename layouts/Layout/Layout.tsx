@@ -1,28 +1,24 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import Footer from "layouts/Footer/Footer";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 type LayoutProps = {
   children: React.ReactNode;
+  isBorder: boolean;
 };
-const Layout: FC<LayoutProps> = ({ children }) => {
-  const { scrollY } = useScroll();
-  useEffect(() => {
-    console.log(scrollY);
-  }, [scrollY]);
+const Layout: FC<LayoutProps> = ({ children, isBorder }) => {
   return (
-    // <motion.main
-    //   initial={{ opacity: 0 }}
-    //   key={"key"}
-    //   animate={{ opacity: 1 }}
-    //   exit={{ opacity: 0 }}
-    //   className="w-full h-screen overflow-scroll border-black"
-    // >
-    <div className={`w-full h-auto`}>
+    <motion.main className={`w-full h-auto`}>
+      <motion.div
+        style={{
+          borderWidth: isBorder ? 25 : 0,
+          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+        }}
+        className="w-full h-screen border-black fixed z-10"
+      />
       {children}
       <Footer />
-    </div>
-    // </motion.main>
+    </motion.main>
   );
 };
 
