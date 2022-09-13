@@ -21,7 +21,7 @@ const Second: FC = () => {
         className={`flex flex-1 flex-row bg-gray4 items-center place-content-center`}
       >
         <p className="w-1/2 text-center">
-          <b>Front-End Developer</b> with <b>4</b> year experience. Building and
+          <b>Front-End Developer</b> with <b>5</b> year experience. Building and
           maintaining applications in the various industries. Proficient in{" "}
           <b>JS</b> Frameworks. Passionate about <b>UI/UX</b>
         </p>
